@@ -28,6 +28,7 @@ const AboutSection = () => {
 
     return (
         <section
+            id="about"
             ref={sectionRef}
             className="relative w-full min-h-screen bg-black px-4 sm:px-8 lg:px-28"
         >

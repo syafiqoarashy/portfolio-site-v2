@@ -32,19 +32,21 @@ const Navbar = () => {
                 {/* Desktop menu */}
                 <div className="hidden sm:flex gap-12">
                     <Link
-                        href="/about"
+                        href="#about"
                         className={`${isDark ? 'text-white hover:text-white/80' : 'text-black hover:text-black/80'} transition-colors`}
                     >
                         About
                     </Link>
                     <Link
-                        href="/works"
+                        href="#works"
                         className={`${isDark ? 'text-white hover:text-white/80' : 'text-black hover:text-black/80'} transition-colors`}
                     >
                         Works
                     </Link>
                     <Link
-                        href="/resume"
+                        href="https://drive.google.com/file/d/1FN13uSKZ5htZjSJx6tzRiengG_9VwS5b/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className={`${isDark ? 'text-white hover:text-white/80' : 'text-black hover:text-black/80'} transition-colors`}
                     >
                         Resume
@@ -52,7 +54,7 @@ const Navbar = () => {
                 </div>
 
                 <Link
-                    href="/contact"
+                    href="#contact"
                     className={`hidden sm:block px-6 py-2 rounded-full ${
                         isDark
                             ? 'bg-white/10 hover:bg-white/20 text-white'
@@ -81,7 +83,13 @@ const Navbar = () => {
                                 transition={{ duration: 0.3, delay: index * 0.1 }}
                             >
                                 <Link
-                                    href={item === "Let's Talk" ? "/contact" : `/${item.toLowerCase()}`}
+                                    href={
+                                        item === "Resume"
+                                            ? "https://drive.google.com/file/d/1FN13uSKZ5htZjSJx6tzRiengG_9VwS5b/view?usp=sharing"
+                                            : item === "Let's Talk"
+                                            ? "#contact"
+                                            : `#${item.toLowerCase()}`
+                                    }
                                     className={`block py-2 ${isDark ? 'text-white' : 'text-black'}`}
                                     onClick={toggleMenu}
                                 >

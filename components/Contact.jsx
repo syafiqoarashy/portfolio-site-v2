@@ -35,7 +35,9 @@ const ContactSection = () => {
             <div className="absolute top-0 left-0 right-0 h-[48px] bg-black rounded-b-[48px]" />
 
             {/* Main Content */}
-            <section ref={contactRef}
+            <section 
+            id="contact"
+            ref={contactRef}
                      className="w-full px-4 sm:px-8 lg:px-28 pt-40 pb-4">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">

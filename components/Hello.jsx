@@ -27,7 +27,7 @@ const HelloSection = () => {
                         </div>
 
                         <Link
-                            href="/contact"
+                            href="#contact"
                             className="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-orange-500/10 hover:bg-orange-500/20 text-orange-400 rounded-full transition-all group"
                         >
                             Let&#39;s talk

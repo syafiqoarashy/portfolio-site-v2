@@ -2,7 +2,9 @@ import React from 'react';
 
 const WorksSection = () => {
     return (
-        <section className="w-full bg-black px-4 sm:px-8 lg:px-28 pb-16">
+        <section 
+        id="works"
+        className="w-full bg-black px-4 sm:px-8 lg:px-28 pb-16">
             <div className="max-w-6xl mx-auto">
                 <div className="">
                     <div className="flex items-center gap-2">
