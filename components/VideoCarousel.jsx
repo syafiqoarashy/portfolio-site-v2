@@ -125,15 +125,6 @@ const VideoCarousel = () => {
         }
     };
 
-    const handleDragEnd = (event, info) => {
-        const distance = info.offset.x;
-        if (distance < -100 && currentIndex < projectData.length - 1) {
-            setCurrentIndex((prev) => prev + 1);
-        } else if (distance > 100 && currentIndex > 0) {
-            setCurrentIndex((prev) => prev - 1);
-        }
-    };
-
     // Project details overlay component
     const ProjectDetails = ({ project, isVisible, onClose }) => {
         return (
@@ -244,9 +235,6 @@ const VideoCarousel = () => {
                             {/* Container with different aspect ratios for mobile and desktop */}
                             <div className="sm:aspect-video aspect-[9/16] w-full">
                                 <motion.div
-                                    drag="x"
-                                    dragConstraints={{ left: -(projectData.length - 1) * 100, right: 0 }}
-                                    onDragEnd={handleDragEnd}
                                     animate={{ x: `${-currentIndex * 100}%` }}
                                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                                     className="absolute inset-0 flex"
