@@ -31,7 +31,7 @@ const AboutSection = () => {
         <section
             id="about"
             ref={sectionRef}
-            className="relative w-full min-h-screen bg-black px-4 sm:px-8 lg:px-28"
+            className="relative w-full min-h-screen bg-black px-4 sm:px-8 lg:px-28 overflow-x-hidden"
         >
             <div className="max-w-7xl mx-auto md:pb-32 lg:pb-40">
                 <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-8 items-center">
