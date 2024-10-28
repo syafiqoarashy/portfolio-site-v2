@@ -203,9 +203,9 @@ const VideoCarousel = () => {
     return (
         <section
                 ref={containerRef}
-                className="relative h-[300vh] bg-white rounded-b-[48px] pb-20"
+                className="relative h-[300vh] bg-white w-full rounded-b-[48px] pb-20"
             >
-                <div className="sticky top-0 h-screen w-screen flex items-center justify-center overflow-x-hidden">
+                <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-x-hidden">
                     <div className="relative w-full h-full flex flex-col items-center justify-center">
                         <motion.div
                             style={{ scale }}

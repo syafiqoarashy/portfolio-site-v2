@@ -31,11 +31,8 @@ const ContactSection = () => {
     return (
         <div className="relative w-full bg-white overflow-hidden">
             {/* Animated border radius */}
-            <motion.div 
-                className="absolute top-0 left-0 right-0 h-[48px] bg-black rounded-b-[48px]"
-                initial={{ opacity: 0, y: -20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
-                transition={{ duration: 0.6 }}
+            <div 
+                className="absolute -top-1 left-0 right-0 h-[48px] bg-black rounded-b-[48px]"
             />
 
             <section id="contact" ref={contactRef} className="w-full px-4 sm:px-8 lg:px-28 pt-40 pb-4">
