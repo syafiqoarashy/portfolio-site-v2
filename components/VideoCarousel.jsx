@@ -61,6 +61,7 @@ const VideoCarousel = () => {
     const [selectedProject, setSelectedProject] = useState(null);
     const [showDetails, setShowDetails] = useState(false);
     const [hoveredIndex, setHoveredIndex] = useState(null);
+    const [loadedVideos, setLoadedVideos] = useState({});
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -70,6 +71,32 @@ const VideoCarousel = () => {
     const scale = useTransform(scrollYProgress, [0, 0.7], [1, 0.6]);
     const opacity = useTransform(scrollYProgress, [0.4, 0.6], [0, 1]);
     const titleOpacity = useTransform(scrollYProgress, [0.8, 0.9], [0, 1]);
+
+    // Video preloading logic
+    useEffect(() => {
+        const preloadVideos = async () => {
+            const videoElements = {};
+            projectData.forEach((project) => {
+                const video = document.createElement('video');
+                video.src = project.video;
+                video.preload = 'auto';
+                video.muted = true;
+                video.playsInline = true;
+
+                // Track loading state
+                video.onloadeddata = () => {
+                    setLoadedVideos(prev => ({
+                        ...prev,
+                        [project.id]: true
+                    }));
+                };
+
+                videoElements[project.id] = video;
+            });
+        };
+
+        preloadVideos();
+    }, []);
 
     useEffect(() => {
         const updateTheme = () => {
@@ -90,6 +117,112 @@ const VideoCarousel = () => {
         setHoveredIndex(index);
         setSelectedProject(projectData[index]);
         setShowDetails(true);
+    };
+
+    // Video component with error handling and loading state
+    const VideoElement = ({ project, className }) => {
+        const videoRef = useRef(null);
+        const [isLoading, setIsLoading] = useState(true);
+        const [hasError, setHasError] = useState(false);
+        const playAttemptRef = useRef(null);
+    
+        useEffect(() => {
+            let mounted = true;
+            
+            const setupVideo = async () => {
+                if (!videoRef.current) return;
+    
+                try {
+                    // Clear any existing play attempts
+                    if (playAttemptRef.current) {
+                        clearTimeout(playAttemptRef.current);
+                    }
+    
+                    // Reset video
+                    videoRef.current.currentTime = 0;
+                    videoRef.current.load();
+    
+                    // Wait for video to be ready
+                    await new Promise((resolve, reject) => {
+                        videoRef.current.onloadeddata = resolve;
+                        videoRef.current.onerror = reject;
+                    });
+    
+                    if (!mounted) return;
+    
+                    // Attempt to play with retry logic
+                    const attemptPlay = async (retryCount = 0) => {
+                        try {
+                            await videoRef.current.play();
+                            if (mounted) {
+                                setIsLoading(false);
+                                setHasError(false);
+                            }
+                        } catch (error) {
+                            console.warn('Play attempt failed:', error);
+                            if (retryCount < 3 && mounted) {
+                                // Retry after a short delay
+                                playAttemptRef.current = setTimeout(() => {
+                                    attemptPlay(retryCount + 1);
+                                }, 1000);
+                            } else if (mounted) {
+                                setHasError(true);
+                                setIsLoading(false);
+                            }
+                        }
+                    };
+    
+                    await attemptPlay();
+    
+                } catch (error) {
+                    console.error('Video setup failed:', error);
+                    if (mounted) {
+                        setHasError(true);
+                        setIsLoading(false);
+                    }
+                }
+            };
+    
+            setupVideo();
+    
+            return () => {
+                mounted = false;
+                if (playAttemptRef.current) {
+                    clearTimeout(playAttemptRef.current);
+                }
+                if (videoRef.current) {
+                    videoRef.current.pause();
+                    videoRef.current.src = '';
+                    videoRef.current.load();
+                }
+            };
+        }, [project.video]);
+    
+        return (
+            <div className="relative w-full h-full">
+                {isLoading && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                        <div className="w-8 h-8 border-4 border-gray-300 border-t-orange-500 rounded-full animate-spin"></div>
+                    </div>
+                )}
+                {hasError && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                        <p className="text-red-500">Error loading video</p>
+                    </div>
+                )}
+                <video
+                    ref={videoRef}
+                    className={className}
+                    muted
+                    loop
+                    playsInline
+                    autoPlay={false} // We'll handle play manually
+                    preload="auto"
+                >
+                    <source src={project.video} type="video/mp4" />
+                </video>
+            </div>
+        );
     };
 
     const handleClose = () => {
@@ -256,19 +389,10 @@ const VideoCarousel = () => {
                                                 onClick={() => handleInteraction(index)}
                                             >
                                                 {/* Video with object-fit adjustments for mobile */}
-                                                <video
+                                                <VideoElement
+                                                    project={project}
                                                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-95"
-                                                    autoPlay
-                                                    muted
-                                                    loop
-                                                    playsInline
-                                                    style={{
-                                                        objectFit: 'cover',
-                                                        objectPosition: 'center'
-                                                    }}
-                                                >
-                                                    <source src={project.video} type="video/mp4" />
-                                                </video>
+                                                />
 
                                                 {/* Mobile overlay for video info (optional) */}
                                                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:hidden">
