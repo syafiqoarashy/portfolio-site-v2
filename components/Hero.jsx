@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <div className="relative h-screen w-full overflow-hidden rounded-b-[48px]">
+        <div className="relative h-screen bg-black w-full overflow-hidden rounded-b-[48px]">
             {/* Animated gradient background */}
             <motion.div 
                 className="absolute inset-0"

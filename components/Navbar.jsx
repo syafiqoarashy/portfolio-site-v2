@@ -11,6 +11,27 @@ const Navbar = () => {
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+    const handleScroll = (e, targetId) => {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            const navbarHeight = 100;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+
+            // Close mobile menu if open
+            if (isMenuOpen) {
+                setIsMenuOpen(false);
+            }
+        }
+    };
+
     return (
         <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-11/12 max-w-6xl">
             <nav className={`px-4 sm:px-10 py-4 ${isDark ? 'bg-white/10' : 'bg-black/10'} backdrop-blur-md rounded-full flex items-center justify-between transition-colors duration-300`}>
@@ -31,38 +52,44 @@ const Navbar = () => {
 
                 {/* Desktop menu */}
                 <div className="hidden sm:flex gap-12">
-                    <Link
-                        href="#about"
-                        className={`${isDark ? 'text-white hover:text-white/80' : 'text-black hover:text-black/80'} transition-colors`}
-                    >
-                        About
-                    </Link>
-                    <Link
-                        href="#works"
-                        className={`${isDark ? 'text-white hover:text-white/80' : 'text-black hover:text-black/80'} transition-colors`}
-                    >
-                        Works
-                    </Link>
+                    {['About', 'Works'].map((item) => (
+                        <a
+                            key={item}
+                            href={`#${item.toLowerCase()}`}
+                            onClick={(e) => handleScroll(e, `#${item.toLowerCase()}`)}
+                            className={`${
+                                isDark ? 'text-white hover:text-white/80' : 'text-black hover:text-black/80'
+                            } transition-colors relative group`}
+                        >
+                            {item}
+                            <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full" />
+                        </a>
+                    ))}
                     <Link
                         href="https://drive.google.com/file/d/1FN13uSKZ5htZjSJx6tzRiengG_9VwS5b/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`${isDark ? 'text-white hover:text-white/80' : 'text-black hover:text-black/80'} transition-colors`}
+                        className={`${
+                            isDark ? 'text-white hover:text-white/80' : 'text-black hover:text-black/80'
+                        } transition-colors relative group`}
                     >
                         Resume
+                        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full" />
                     </Link>
                 </div>
 
-                <Link
+                {/* Let's Talk button with slide-in icon animation */}
+                <a
                     href="#contact"
-                    className={`hidden sm:block px-6 py-2 rounded-full ${
+                    onClick={(e) => handleScroll(e, '#contact')}
+                    className={`hidden sm:flex items-center gap-2 px-6 py-2 rounded-full overflow-hidden group ${
                         isDark
                             ? 'bg-white/10 hover:bg-white/20 text-white'
                             : 'bg-black/10 hover:bg-black/20 text-black'
                     } transition-all`}
                 >
-                    Let&#39;s Talk
-                </Link>
+                    <span>Let&#39;s Talk</span>
+                </a>
             </nav>
 
             {/* Mobile menu */}
@@ -82,19 +109,28 @@ const Navbar = () => {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.3, delay: index * 0.1 }}
                             >
-                                <Link
-                                    href={
-                                        item === "Resume"
-                                            ? "https://drive.google.com/file/d/1FN13uSKZ5htZjSJx6tzRiengG_9VwS5b/view?usp=sharing"
-                                            : item === "Let's Talk"
-                                            ? "#contact"
-                                            : `#${item.toLowerCase()}`
-                                    }
-                                    className={`block py-2 ${isDark ? 'text-white' : 'text-black'}`}
-                                    onClick={toggleMenu}
-                                >
-                                    {item}
-                                </Link>
+                                {item === 'Resume' ? (
+                                    <Link
+                                        href="https://drive.google.com/file/d/1FN13uSKZ5htZjSJx6tzRiengG_9VwS5b/view?usp=sharing"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`block py-2 ${isDark ? 'text-white' : 'text-black'}`}
+                                        onClick={toggleMenu}
+                                    >
+                                        {item}
+                                    </Link>
+                                ) : (
+                                    <a
+                                        href={`#${item.toLowerCase()}`}
+                                        className={`block py-2 ${isDark ? 'text-white' : 'text-black'}`}
+                                        onClick={(e) => {
+                                            handleScroll(e, `#${item.toLowerCase().replace("'s talk", '')}`);
+                                            toggleMenu();
+                                        }}
+                                    >
+                                        {item}
+                                    </a>
+                                )}
                             </motion.div>
                         ))}
                     </motion.div>
