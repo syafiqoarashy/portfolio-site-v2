@@ -220,7 +220,7 @@ const AboutSection = () => {
                                 animate={isInView ? "animate" : "initial"}
                                 transition={{ duration: 0.6, delay: 0.6 }}
                             >
-                                Passionate about XR technology and interactive designs. I&#39;m a final-year computer science student at the University of Queensland. With expertise in UI/UX, 3D, graphic, game development and interactive design, I thrive on overcoming challenges and bringing visionary ideas to life.
+                                Passionate about XR technology and interactive designs. I&#39;m a Computer Science student from University of Indonesia and an UX Design student at University of Queensland. With expertise in UI/UX, 3D, graphic, game development and interactive design, I thrive on overcoming challenges and bringing visionary ideas to life.
                             </motion.p>
 
                             <motion.div 
