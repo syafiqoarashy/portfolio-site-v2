@@ -98,50 +98,6 @@ const Hero = () => {
                     Portfolio
                 </motion.h1>
             </div>
-
-            {/* Fixed Particles component */}
-            <Particles />
-        </div>
-    );
-};
-
-// Updated Particles component with client-side calculation
-const Particles = () => {
-    const [particles, setParticles] = useState([]);
-
-    useEffect(() => {
-        // Generate particles only on client side
-        const particlesArray = [...Array(20)].map((_, i) => ({
-            id: i,
-            x: Math.random() * 100, // Use percentages instead of pixel values
-            y: Math.random() * 100,
-            duration: 2 + Math.random() * 2,
-            delay: Math.random() * 2
-        }));
-        setParticles(particlesArray);
-    }, []);
-
-    return (
-        <div className="absolute inset-0 z-0">
-            {particles.map((particle) => (
-                <motion.div
-                    key={particle.id}
-                    className="absolute w-1 h-1 bg-white/20 rounded-full"
-                    initial={{
-                        left: `${particle.x}%`,
-                        top: `${particle.y}%`
-                    }}
-                    animate={{
-                        y: [0, -20, 0],
-                        opacity: [0, 1, 0],
-                    }}
-                    transition={{
-                        duration: particle.duration,
-                        repeat: Infinity,
-                        delay: particle.delay,
-                    }}
-                />
-            ))}
         </div>
     );
 };

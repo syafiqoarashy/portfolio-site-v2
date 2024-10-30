@@ -23,9 +23,9 @@ const WorksSection = () => {
                     >
                         <h2 className="text-white text-xl">Works</h2>
                         <motion.div 
-                            className="h-0.5 w-0 bg-white/20"
+                            className="h-0.5 bg-gradient-to-r from-orange-400 to-orange-600"
                             animate={isInView ? { width: "3rem" } : { width: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
+                            transition={{ duration: 1.2, delay: 0.2 }}
                         />
                     </motion.div>
 
