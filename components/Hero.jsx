@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="relative h-screen bg-black w-full overflow-hidden rounded-b-[48px]">
             {/* Animated gradient background */}
             <motion.div 
-                className="absolute inset-0"
+                className="absolute bg-black inset-0"
                 initial={{ scale: 1.2, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
@@ -17,7 +17,7 @@ const Hero = () => {
                     src="/background-gradient.png"
                     alt="Orange gradient background"
                     fill
-                    className="object-cover"
+                    className="object-cover bg-black"
                     priority
                 />
             </motion.div>
