@@ -45,6 +45,15 @@ const projectData = [
     },
     {
         id: 5,
+        video: `${S3_BASE_URL}/tps-ue.mp4`,
+        title: "Game Development: UE5 Third Person Shooter Prototype",
+        description: "Designed and programmed a third-person shooter prototype using Unreal Engine's Blueprint.  With this project, I learned and delved into the world of animation and UI design within Unreal. Furthermore, I created AI enemies to enhance the gameplay experience. In essence, this project broadened my horizons in game development. It wasn't a full-fledged game but rather a stepping stone in my journey. It offered insights into animation, UI, and AI that I look forward to further refining as I continue to explore the world of game development.",
+        toolsUsed: "Unreal Engine, Blueprint",
+        projectType: "Game Development",
+        myRole: "Unreal Programmer",
+    },
+    {
+        id: 6,
         video: `${S3_BASE_URL}/tickets-please.mp4`,
         title: "Game Development: Tickets Please",
         description: "In charge as the lead gameplay programmer, I was responsible for developing player interactions and enemy AIs using Unity and C#. This task was a valuable learning experience, as I had to adapt the AI behavior based on player interactions.",
