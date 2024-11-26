@@ -71,7 +71,7 @@ const HelloSection = () => {
                                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                                 transition={{ duration: 0.6, delay: 0.8 }}
                             >
-                                I&#39;m a Game Developer.
+                                I&#39;m a Developer and a Designer.
                             </motion.p>
                         </div>
 

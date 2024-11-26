@@ -1,7 +1,7 @@
 import Hero from '@/components/Hero';
 import HelloSection from "@/components/Hello";
 import WorksSection from "@/components/Works";
-import VideoCarousel from "@/components/VideoCarousel";
+import MediaCarousel from "@/components/MediaCarousel";
 import AboutSection from "@/components/About";
 import ContactSection from "@/components/Contact";
 
@@ -11,7 +11,7 @@ export default function Home() {
         <Hero />
           <HelloSection />
           <WorksSection />
-          <VideoCarousel />
+          <MediaCarousel />
           <AboutSection />
           <ContactSection />
       </main>
