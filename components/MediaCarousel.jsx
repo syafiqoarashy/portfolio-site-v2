@@ -215,6 +215,8 @@ const MediaCarousel = () => {
             return (
                 <video
                     className={`w-full h-full object-cover ${className}`}
+                    autoPlay
+                    controls
                     muted
                     loop
                     playsInline
