@@ -12,16 +12,6 @@ const projectData = [
     {
         id: 1,
         mediaType: "image",
-        media: `${S3_BASE_URL}/portfolio6.jpg`,
-        title: "Hackathon: UQUIZZLE",
-        description: "Secured 1st place at UQCS Hackathon 2024, competing against 35 other teams. Developed an extension for UQ lecture recordings as the Frontend Engineer and UI Designer, utilizing ReactJS and Craco to enhance the learning experience.",
-        toolsUsed: "ReactJS, Craco, JavaScript, HTML, CSS, Git",
-        projectType: "Frontend Development",
-        myRole: "Frontend Engineer & UI Designer"
-    },
-    {
-        id: 2,
-        mediaType: "image",
         media: `${S3_BASE_URL}/portfolio5.jpg`,
         title: "Internship: MoneyFitt SG",
         description: "My first internship experience, I built new features for MoneyFitt's mobile app using Ionic and Angular to improve user experience, and optimized the app's backend with Spring Boot for better mobile service support.",
@@ -30,7 +20,7 @@ const projectData = [
         myRole: "Mobile Developer"
     },
     {
-        id: 3,
+        id: 2,
         mediaType: "image",
         media: `${S3_BASE_URL}/portfolio7.jpg`,
         title: "Internship: Gradient Academy",
@@ -38,6 +28,16 @@ const projectData = [
         toolsUsed: "NextJS, TypeScript, Django, Python, Git",
         projectType: "Software Development",
         myRole: "Software Engineer Intern"
+    },
+    {
+        id: 3,
+        mediaType: "image",
+        media: `${S3_BASE_URL}/portfolio6.jpg`,
+        title: "Hackathon: UQUIZZLE",
+        description: "Secured 1st place at UQCS Hackathon 2024, competing against 35 other teams. Developed an extension for UQ lecture recordings as the Frontend Engineer and UI Designer, utilizing ReactJS and Craco to enhance the learning experience.",
+        toolsUsed: "ReactJS, Craco, JavaScript, HTML, CSS, Git",
+        projectType: "Frontend Development",
+        myRole: "Frontend Engineer & UI Designer"
     },
     {
         id: 4,
@@ -53,7 +53,7 @@ const projectData = [
     {
         id: 5,
         mediaType: "video",
-        media: `${S3_BASE_URL}/tti.mp4`,
+        media: `${S3_BASE_URL}/tti.webm`,
         title: "Game Development: Total Trash Island",
         description: "Developed a first-person shooter as a team in Unity for the Ubisoft Australia Game Jam 2024. The game was done with the theme 'trash' where the player must eradicate the enemies of the island. I was in charge of developing the enemy AIs of the game using Unity and C#. The enemy wasn't conventional as the enemies were 2D sprites implemented in a 3D environment. Programming these AI behaviors using Unity's pathfinding and animation systems was a fun challenge, and it created a truly unique and wacky gameplay experience.",
         toolsUsed: "Unity, C#",
@@ -63,7 +63,7 @@ const projectData = [
     {
         id: 6,
         mediaType: "video",
-        media: `${S3_BASE_URL}/vr-space.mp4`,
+        media: `${S3_BASE_URL}/vr-space.webm`,
         title: "Game Development: VR Space Shooter",
         description: "Developed a VR shooter game as a personal project to explore the capabilities of Unity's XR toolkit. Implemented realistic weapon mechanics, enemy AI, and immersive level design. This project honed my skills in C# scripting, VR interaction, and spatial audio.",
         toolsUsed: "Unity, C#, Unity XRI Toolkit",
@@ -73,7 +73,7 @@ const projectData = [
     {
         id: 7,
         mediaType: "video",
-        media: `${S3_BASE_URL}/opengl-mc.mp4`,
+        media: `${S3_BASE_URL}/opengl-mc.webm`,
         title: "Computer Graphics: Minecraft World Generation",
         description: "Developed a simplified Minecraft-inspired terrain generator using procedural generation techniques. Implemented 2D Perlin noise for natural-looking terrain generation, featuring a dynamic day/night cycle with realistic lighting and shadows. Created an optimized rendering system with view distance management and fog effects. The project includes textured blocks, smooth camera controls, and PCF shadow mapping for realistic shadow rendering.",
         toolsUsed: "C++, OpenGL, GLFW, GLM",
@@ -83,7 +83,7 @@ const projectData = [
     {
         id: 8,
         mediaType: "video",
-        media: `${S3_BASE_URL}/omz.mp4`,
+        media: `${S3_BASE_URL}/omz.webm`,
         title: "Game Development: Old Man Zeus",
         description: "Developed a fast-paced VR action game in just 9 days for the VR Jam 2. As the once-mighty Zeus, now retired, you must defend your home from hordes of minotaurs using your legendary lightning powers. Charge your bolts by touching electrical outlets, strike your foes, and activate a celestial alarm to summon help from the Olympians.",
         toolsUsed: "Unity, C#, Unity XRI Toolkit",
@@ -93,7 +93,7 @@ const projectData = [
     {
         id: 9,
         mediaType: "video",
-        media: `${S3_BASE_URL}/tps-ue.mp4`,
+        media: `${S3_BASE_URL}/tps-ue.webm`,
         title: "Game Development: UE5 Third Person Shooter Prototype",
         description: "Designed and programmed a third-person shooter prototype using Unreal Engine's Blueprint. With this project, I learned and delved into the world of animation and UI design within Unreal. Furthermore, I created AI enemies to enhance the gameplay experience. In essence, this project broadened my horizons in game development. It wasn't a full-fledged game but rather a stepping stone in my journey. It offered insights into animation, UI, and AI that I look forward to further refining as I continue to explore the world of game development.",
         toolsUsed: "Unreal Engine, Blueprint",
@@ -103,7 +103,7 @@ const projectData = [
     {
         id: 10,
         mediaType: "video",
-        media: `${S3_BASE_URL}/tickets-please.mp4`,
+        media: `${S3_BASE_URL}/tickets-please.webm`,
         title: "Game Development: Tickets Please",
         description: "In charge as the lead gameplay programmer, I was responsible for developing player interactions and enemy AIs using Unity and C#. This task was a valuable learning experience, as I had to adapt the AI behavior based on player interactions.",
         toolsUsed: "Unity, C#",
@@ -146,7 +146,7 @@ const projectData = [
 const MediaCarousel = () => {
     const { setIsDark } = useTheme();
     const containerRef = useRef(null);
-    const [currentIndex, setCurrentIndex] = useState(2);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedProject, setSelectedProject] = useState(null);
     const [showDetails, setShowDetails] = useState(false);
     const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -224,7 +224,10 @@ const MediaCarousel = () => {
                         objectPosition: 'center'
                     }}
                 >
-                    <source src={project.media} type="video/mp4" />
+                    <source 
+                    src={project.media} 
+                    type="video/webm; codecs=vp9,vorbis"
+                />
                 </video>
             );
         } else if (project.mediaType === "image") {
