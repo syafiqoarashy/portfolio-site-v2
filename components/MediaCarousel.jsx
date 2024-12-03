@@ -215,11 +215,11 @@ const MediaCarousel = () => {
             return (
                 <video
                     className={`w-full h-full object-cover ${className}`}
-                    autoPlay
-                    controls
-                    muted
-                    loop
-                    playsInline
+                    autoPlay={true}
+                    controls={true}
+                    muted={true}
+                    loop={true}
+                    playsInline={true}
                     style={{
                         objectFit: 'cover',
                         objectPosition: 'center'
