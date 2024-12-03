@@ -211,80 +211,42 @@ const MediaCarousel = () => {
 
     // Media content component to handle both videos and images
     const MediaContent = ({ project, className = "" }) => {
-        const videoRef = useRef(null);
-        const [isVideoError, setIsVideoError] = useState(false);
-    
-        useEffect(() => {
-            if (project.mediaType === "video" && videoRef.current) {
-                const playVideo = async () => {
-                    try {
-                        videoRef.current.load();
-                        const playPromise = videoRef.current.play();
-                        if (playPromise !== undefined) {
-                            playPromise.catch(error => {
-                                console.error("Playback error:", error);
-                                setIsVideoError(true);
-                            });
-                        }
-                    } catch (err) {
-                        console.error("Video error:", err);
-                        setIsVideoError(true);
-                    }
-                };
-    
-                playVideo();
-    
-                // Add touch event listener for mobile
-                const handleTouch = () => {
-                    if (videoRef.current && videoRef.current.paused) {
-                        videoRef.current.play().catch(err => console.error("Play failed:", err));
-                    }
-                };
-    
-                document.addEventListener('touchstart', handleTouch);
-                return () => document.removeEventListener('touchstart', handleTouch);
-            }
-        }, [project.media, project.mediaType]);
-    
         if (project.mediaType === "video") {
             return (
-                <div className={`relative w-full h-full ${className}`}>
-                    <video
-                        ref={videoRef}
-                        className="w-full h-full object-cover"
-                        muted
-                        loop
-                        playsInline
-                        style={{
-                            objectFit: 'cover',
-                            objectPosition: 'center'
-                        }}
-                    >
-                        <source 
-                            src={project.media}
-                            type="video/webm"
-                        />
-                    </video>
-                </div>
+                <video
+                    className={`w-full h-full object-cover ${className}`}
+                    muted
+                    loop
+                    playsInline
+                    style={{
+                        objectFit: 'cover',
+                        objectPosition: 'center'
+                    }}
+                >
+                    <source 
+                    src={project.media} 
+                    type="video/webm; codecs=vp9,vorbis"
+                />
+                </video>
             );
         } else if (project.mediaType === "image") {
             return (
                 <div className={`relative w-full h-full ${className}`}>
-                    <Image
-                        src={project.media}
-                        alt={project.title}
-                        fill
-                        priority={true}
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        quality={85}
-                    />
-                </div>
+                <Image
+                    src={project.media}
+                    alt={project.title}
+                    fill
+                    priority={true}
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    quality={85}
+                />
+            </div>
             );
         }
         return null;
     };
-    
+
     // Project details overlay component
     const ProjectDetails = ({ project, isVisible, onClose }) => {
         return (
