@@ -151,6 +151,7 @@ const MediaCarousel = () => {
     const [showDetails, setShowDetails] = useState(false);
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const [isClicked, setIsClicked] = useState(false);
+    const [visibleProjects, setVisibleProjects] = useState(projectData);
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -170,6 +171,26 @@ const MediaCarousel = () => {
         const unsubscribe = scrollYProgress.on('change', updateTheme);
         return () => unsubscribe();
     }, [scrollYProgress, setIsDark]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 768) {
+                const imageProjects = projectData.filter(project => project.mediaType === "image");
+                setVisibleProjects(imageProjects);
+                if (currentIndex >= imageProjects.length) {
+                    setCurrentIndex(0);
+                }
+            } else {
+                setVisibleProjects(projectData);
+            }
+        };
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const handleInteraction = (index) => {
         if (window.innerWidth <= 768) {
@@ -200,12 +221,12 @@ const MediaCarousel = () => {
     };
 
     const nextMedia = () => {
-        setCurrentIndex(prev => (prev + 1) % projectData.length);
+        setCurrentIndex(prev => (prev + 1) % visibleProjects.length);
         setShowDetails(false);
     };
     
     const prevMedia = () => {
-        setCurrentIndex(prev => (prev - 1 + projectData.length) % projectData.length);
+        setCurrentIndex(prev => (prev - 1 + visibleProjects.length) % visibleProjects.length);
         setShowDetails(false);
     };
 
@@ -216,7 +237,6 @@ const MediaCarousel = () => {
                 <video
                     className={`w-full h-full object-cover ${className}`}
                     autoPlay={true}
-                    controls={true}
                     muted={true}
                     loop={true}
                     playsInline={true}
@@ -351,7 +371,7 @@ const MediaCarousel = () => {
                                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                                     className="absolute inset-0 flex"
                                 >
-                                    {projectData.map((project, index) => (
+                                    {visibleProjects.map((project, index) => (
                                         <motion.div
                                             key={index}
                                             className="relative flex-shrink-0 w-full px-2 sm:px-4"
@@ -393,14 +413,14 @@ const MediaCarousel = () => {
                                     <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/4 w-1/4 md:w-1/3 aspect-video">
                                         <div className="rounded-xl overflow-hidden opacity-0 sm:opacity-15 scale-75">
                                             <MediaContent 
-                                                project={projectData[(currentIndex - 1 + projectData.length) % projectData.length]} 
+                                                project={visibleProjects[(currentIndex - 1 + visibleProjects.length) % visibleProjects.length]} 
                                             />
                                         </div>
                                     </div>
                                     <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 w-1/4 md:w-1/3 aspect-video">
                                         <div className="rounded-xl overflow-hidden opacity-0 sm:opacity-15 scale-75">
                                             <MediaContent 
-                                                project={projectData[(currentIndex + 1) % projectData.length]} 
+                                                project={visibleProjects[(currentIndex + 1) % visibleProjects.length]} 
                                             />
                                         </div>
                                     </div>
@@ -409,7 +429,7 @@ const MediaCarousel = () => {
                         </div>
 
                         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 sm:gap-3">
-                            {projectData.map((_, index) => (
+                            {visibleProjects.map((_, index) => (
                                 <button
                                     key={index}
                                     onClick={() => {
