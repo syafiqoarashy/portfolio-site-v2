@@ -227,8 +227,15 @@ const MediaCarousel = () => {
                 >
                     <source 
                     src={project.media} 
-                    type="video/webm; codecs=vp9,vorbis"
+                    type="video/webm"
                 />
+                {/* Fallback source - MP4 for iOS Safari */}
+                <source 
+                    src={project.media.replace('.webm', '.mp4')} 
+                    type="video/mp4"
+                />
+                {/* Fallback text if neither format works */}
+                Your browser does not support the video tag.
                 </video>
             );
         } else if (project.mediaType === "image") {
