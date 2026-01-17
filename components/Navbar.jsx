@@ -74,7 +74,7 @@ const Navbar = () => {
                         transition={{ duration: 0.2 }}
                         className={`absolute top-full left-0 mt-2 py-2 rounded-xl ${
                             isDark ? 'bg-white/10' : 'bg-black/10'
-                        } backdrop-blur-md min-w-[200px]`}
+                        } backdrop-blur-md min-w-[200px] z-[60]`}
                         onMouseLeave={() => setIsResumeOpen(false)}
                     >
                         {resumeLinks.map((link, index) => (

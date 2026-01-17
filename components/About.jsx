@@ -128,12 +128,12 @@ const AboutSection = () => {
                                     Hi, I&#39;m Fiqo 👋
                                 </h3>
                                 <h2 className="text-white text-2xl sm:text-3xl font-bold">
-                                    Ambitious Student Driven by Growth, Collaboration, and Impact.
+                                    Software Engineer with a Passion for Growth, Collaboration, and Impact.
                                 </h2>
                             </div>
 
                             <p className="text-white/80 text-base sm:text-lg leading-relaxed">
-                                Passionate about XR technology and interactive designs. I&#39;m a Computer Science student from University of Indonesia and an UX Design student at University of Queensland. With expertise in UI/UX, 3D, graphic, game development and interactive design, I thrive on overcoming challenges and bringing visionary ideas to life.
+                                Passionate about XR technology and interactive designs. I&#39;m a Computer Science graduate from University of Indonesia and UX Design graduate from University of Queensland, bringing years of hands-on experience in software development. With expertise in UI/UX, 3D, graphic, game development and interactive design, I thrive on overcoming challenges and bringing visionary ideas to life.
                             </p>
 
                             <div className="flex items-center gap-2 text-white/60">
