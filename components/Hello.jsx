@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
+import Typewriter from 'typewriter-effect';
 
 const HelloSection = () => {
     const sectionRef = useRef(null);
@@ -30,7 +31,7 @@ const HelloSection = () => {
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <div className="space-y-2">
+                        <div className="space-y-3">
                             {/* Animated Hello section */}
                             <motion.div 
                                 className="flex items-center gap-2"
@@ -64,15 +65,35 @@ const HelloSection = () => {
                                 </motion.span>
                             </motion.h1>
 
-                            {/* Animated role text */}
-                            <motion.p 
-                                className="text-white/80 text-lg sm:text-xl mt-2"
+                            {/* Animated role text with typewriter */}
+                            <motion.div
+                                className="text-white/80 text-lg sm:text-xl mt-12"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                                 transition={{ duration: 0.6, delay: 0.8 }}
                             >
-                                I&#39;m a Developer and a Designer.
-                            </motion.p>
+                                <span className="inline-flex items-center gap-1">
+                                    I&#39;m a{' '}
+                                    <span className="text-orange-400 font-medium">
+                                        <Typewriter
+                                            options={{
+                                                strings: [
+                                                    'Software Engineer',
+                                                    'Full Stack Developer',
+                                                    'UI/UX Designer',
+                                                    'Mobile Developer',
+                                                    'Game Developer',
+                                                    'Graphics Programmer',
+                                                ],
+                                                autoStart: true,
+                                                loop: true,
+                                                deleteSpeed: 30,
+                                                delay: 80,
+                                            }}
+                                        />
+                                    </span>
+                                </span>
+                            </motion.div>
                         </div>
 
                         {/* Animated button */}

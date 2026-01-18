@@ -2,93 +2,145 @@
     {
         "id": 1,
         "mediaType": "image",
-        "mediaPath": "/portfolio7.jpg",
-        "title": "Internship: Gradient Academy",
-        "description": "Part of full-stack development for Gradient's web platform using NextJS/TypeScript and Django, contributing to user growth from 25,000 to 125,000 in 6 months.",
+        "mediaPath": "/portfolio9.jpg",
+        "title": "Distrosub",
+        "description": "Architected and deployed scalable AWS cloud infrastructure (EC2, S3, ECS, RDS, Elasticache) and CI/CD pipelines using GitHub Actions for a music streaming platform serving thousands of users.",
         "highlights": [
-            "Architected and delivered three key features: an interactive exercise system with real-time assessment, an AI chat application with streaming functionality, and an AI-powered collaborative flashcard system."
+            "Built production-ready full-stack application using Node.js and Next.js with Progressive Web App (PWA) capabilities, successfully deployed to Apple App Store and Google Play Store.",
+            "Led Agile sprint planning, conducted code reviews, and mentored a 5-person engineering team while reporting directly to the founder."
         ],
-        "toolsUsed": "NextJS, TypeScript, Django, Python, Git",
-        "projectType": "Software Development",
-        "myRole": "Software Engineer Intern"
+        "toolsUsed": "AWS, Node.js, Next.js, TypeScript, CI/CD, GitHub Actions, PWA, React",
+        "projectType": "Full Stack Development",
+        "myRole": "Software Engineer"
     },
     {
         "id": 2,
         "mediaType": "image",
-        "mediaPath": "/portfolio5.jpg",
-        "title": "Internship: MoneyFitt SG",
-        "description": "My first internship experience, I built new features for MoneyFitt's mobile app using Ionic and Angular to improve user experience, and optimized the app's backend with Spring Boot for better mobile service support.",
-        "toolsUsed": "Angular, Ionic, Spring Boot, Java, Typescript, HTML, CSS, Git",
-        "projectType": "Mobile Development",
-        "myRole": "Mobile Developer"
+        "mediaPath": "/portfolio8.jpg",
+        "title": "Internship: TechFlouu",
+        "description": "Developed and shipped production features for TechFlouu's platform using Next.js, TypeScript, React Native, and Node.js, improving user engagement and platform performance.",
+        "highlights": [
+            "Delivered end-to-end full-stack features with comprehensive technical documentation following best practices.",
+            "Collaborated effectively in a fully remote, multi-national Agile environment across different time zones."
+        ],
+        "toolsUsed": "Next.js, TypeScript, React Native, Node.js, REST API, Git",
+        "projectType": "Full Stack Development",
+        "myRole": "Full Stack Developer Intern"
     },
     {
         "id": 3,
         "mediaType": "image",
-        "mediaPath": "/portfolio6.jpg",
-        "title": "Hackathon: UQUIZZLE",
-        "description": "Secured 1st place at UQCS Hackathon 2024, competing against 35 other teams. Developed an extension for UQ lecture recordings as the Frontend Engineer and UI Designer, utilizing ReactJS and Craco to enhance the learning experience.",
-        "toolsUsed": "ReactJS, Craco, JavaScript, HTML, CSS, Git",
-        "projectType": "Frontend Development",
-        "myRole": "Frontend Engineer & UI Designer"
+        "mediaPath": "/portfolio7.jpg",
+        "title": "Internship: Gradient Academy",
+        "description": "Delivered full-stack features for Gradient's EdTech platform using Next.js, TypeScript, and Django REST Framework, directly contributing to 5x user growth (25,000 to 125,000) within 6 months.",
+        "highlights": [
+            "Architected and shipped three production features: real-time interactive exercise system, AI-powered chat application with streaming responses, and collaborative flashcard system with spaced repetition."
+        ],
+        "toolsUsed": "Next.js, TypeScript, Django, Python, REST API, PostgreSQL, Git",
+        "projectType": "Full Stack Development",
+        "myRole": "Software Engineer Intern"
     },
     {
         "id": 4,
         "mediaType": "image",
-        "mediaPath": "/portfolio1.jpg",
-        "title": "Hackathon: PEOPL.",
-        "description": "My team won 1st place in the Youth Empowerment Track at Garuda Hacks 4.0 by creating an innovative youth-centered community discussion app. Focusing on delivering a seamless and visually appealing user experience.",
-        "toolsUsed": "Typescript, ReactJS, HTML, CSS, Git",
-        "projectType": "Web Development",
-        "myRole": "Frontend Developer"
+        "mediaPath": "/portfolio5.jpg",
+        "title": "Internship: MoneyFitt SG",
+        "description": "Developed and optimized mobile application features for MoneyFitt's FinTech platform using Angular, Ionic, and TypeScript, enhancing user experience and app performance.",
+        "highlights": [
+            "Built RESTful API integrations and optimized backend services using Spring Boot and Java for improved mobile responsiveness."
+        ],
+        "toolsUsed": "Angular, Ionic, TypeScript, Spring Boot, Java, REST API, Git",
+        "projectType": "Mobile Development",
+        "myRole": "Mobile Developer Intern"
     },
     {
         "id": 5,
+        "mediaType": "image",
+        "mediaPath": "/portfolio6.jpg",
+        "title": "Hackathon: UQUIZZLE",
+        "description": "Won 1st place at UQCS Hackathon 2024 (35+ teams). Engineered a Chrome extension for lecture recordings using React.js, implementing responsive UI/UX design and state management.",
+        "highlights": [
+            "Led frontend architecture decisions and UI/UX design, delivering a polished product within 48-hour deadline."
+        ],
+        "toolsUsed": "React.js, JavaScript, Chrome Extensions API, HTML5, CSS3, Git",
+        "projectType": "Frontend Development",
+        "myRole": "Frontend Engineer & UI Designer"
+    },
+    {
+        "id": 6,
+        "mediaType": "image",
+        "mediaPath": "/portfolio1.jpg",
+        "title": "Hackathon: PEOPL.",
+        "description": "Won 1st place in Youth Empowerment Track at Garuda Hacks 4.0. Built a community discussion web application using React.js and TypeScript with focus on accessibility and responsive design.",
+        "highlights": [
+            "Implemented component-driven architecture and reusable UI components following React best practices."
+        ],
+        "toolsUsed": "React.js, TypeScript, HTML5, CSS3, Responsive Design, Git",
+        "projectType": "Frontend Development",
+        "myRole": "Frontend Developer"
+    },
+    {
+        "id": 7,
         "mediaType": "video",
         "mediaPath": "/vr-space.mp4",
         "title": "Game Development: VR Space Shooter",
-        "description": "Developed a VR shooter game as a personal project to explore the capabilities of Unity's XR toolkit. Implemented realistic weapon mechanics, enemy AI, and immersive level design. This project honed my skills in C# scripting, VR interaction, and spatial audio.",
-        "toolsUsed": "Unity, C#, Unity XRI Toolkit",
+        "description": "Developed immersive VR game application using Unity and C#, implementing physics-based interactions, AI behavior systems, and 3D spatial audio for enhanced user experience.",
+        "highlights": [
+            "Engineered custom enemy AI using state machines and Unity's NavMesh pathfinding system."
+        ],
+        "toolsUsed": "Unity, C#, Unity XR Toolkit, 3D Graphics, Game Development",
         "projectType": "Game Development",
         "myRole": "VR Developer"
     },
     {
-        "id": 6,
+        "id": 8,
         "mediaType": "video",
         "mediaPath": "/opengl-mc.mp4",
         "title": "Computer Graphics: Minecraft World Generation",
-        "description": "Developed a simplified Minecraft-inspired terrain generator using procedural generation techniques. Implemented 2D Perlin noise for natural-looking terrain generation, featuring a dynamic day/night cycle with realistic lighting and shadows. Created an optimized rendering system with view distance management and fog effects. The project includes textured blocks, smooth camera controls, and PCF shadow mapping for realistic shadow rendering.",
-        "toolsUsed": "C++, OpenGL, GLFW, GLM",
-        "projectType": "Computer Graphics Development",
+        "description": "Built procedural terrain generation system using C++ and OpenGL, implementing Perlin noise algorithms, real-time lighting with shadow mapping, and optimized rendering pipeline.",
+        "highlights": [
+            "Developed PCF shadow mapping, dynamic day/night cycle, and view frustum culling for performance optimization."
+        ],
+        "toolsUsed": "C++, OpenGL, GLSL, GLFW, GLM, Graphics Programming",
+        "projectType": "Computer Graphics",
         "myRole": "Graphics Programmer"
-    },
-    {
-        "id": 7,
-        "mediaType": "image",
-        "mediaPath": "/portfolio2.jpg",
-        "title": "Web Development: OKK UI 2022",
-        "description": "As a Web Developer at OKK UI, I developed an intuitive UI using Tailwind CSS and ReactJS, enhancing the website's aesthetic appeal and user experience. I also created wireframes to facilitate collaboration and align with project goals.",
-        "toolsUsed": "Tailwind CSS, ReactJS, Git",
-        "projectType": "Web Development",
-        "myRole": "Web Developer"
-    },
-    {
-        "id": 8,
-        "mediaType": "image",
-        "mediaPath": "/portfolio3.jpg",
-        "title": "Web Development: ACB-ISBE REVAMPED",
-        "description": "As part of my college project, I worked with a team to revamp the website and create a mobile app for the ACB-ISBE website. We used Tailwind, JavaScript, Django, and Python to create a visually appealing, responsive, and user-friendly website.",
-        "toolsUsed": "Tailwind CSS, JavaScript, AJAX, Django, Python, Git",
-        "projectType": "Full Stack Development",
-        "myRole": "Full Stack Developer"
     },
     {
         "id": 9,
         "mediaType": "image",
+        "mediaPath": "/portfolio2.jpg",
+        "title": "Web Development: OKK UI 2022",
+        "description": "Developed responsive web application using React.js and Tailwind CSS, creating reusable component library and implementing mobile-first design principles.",
+        "highlights": [
+            "Created wireframes and prototypes in Figma, collaborating with stakeholders to align on project requirements."
+        ],
+        "toolsUsed": "React.js, Tailwind CSS, JavaScript, Responsive Design, Figma, Git",
+        "projectType": "Frontend Development",
+        "myRole": "Web Developer"
+    },
+    {
+        "id": 10,
+        "mediaType": "image",
+        "mediaPath": "/portfolio3.jpg",
+        "title": "Web Development: ACB-ISBE REVAMPED",
+        "description": "Led full-stack development of web application using Django, Python, and JavaScript, implementing RESTful APIs and responsive frontend with Tailwind CSS.",
+        "highlights": [
+            "Collaborated in Agile team environment, delivering mobile-responsive design and AJAX-powered dynamic content."
+        ],
+        "toolsUsed": "Django, Python, JavaScript, Tailwind CSS, REST API, AJAX, PostgreSQL, Git",
+        "projectType": "Full Stack Development",
+        "myRole": "Full Stack Developer"
+    },
+    {
+        "id": 11,
+        "mediaType": "image",
         "mediaPath": "/portfolio4.jpg",
         "title": "UI/UX Design: STUDENTXCEO INTERNATIONAL SUMMIT 2022",
-        "description": "I contributed to the design of the StudentXCEO International Summit 2022 website. I made the designs look better and easier to use by creating wireframes and prototypes. I worked with the developers to make sure the designs were implemented correctly. My work helped make the website and app more user-friendly for everyone.",
-        "toolsUsed": "Figma, Whimsical",
+        "description": "Designed user interfaces and user experience flows for international summit website, creating wireframes, prototypes, and design system documentation.",
+        "highlights": [
+            "Conducted user research and usability testing, collaborating with development team to ensure design implementation accuracy."
+        ],
+        "toolsUsed": "Figma, Whimsical, UI/UX Design, Wireframing, Prototyping, User Research",
         "projectType": "UI/UX Design",
         "myRole": "UI/UX Designer"
     }
