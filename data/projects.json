@@ -1,6 +1,20 @@
 [
     {
         "id": 1,
+        "mediaType": "video",
+        "mediaPath": "/tti.mp4",
+        "title": "Game Development: Total Trash Island",
+        "description": "Developed a first-person shooter in Unity for the Ubisoft Australia Game Jam 2024 around the theme 'trash', where the player eradicates enemies invading the island. Responsible for all enemy AI systems in the game.",
+        "highlights": [
+            "Engineered enemy AI featuring 2D billboard sprites in a 3D environment — an unconventional approach that gave the game a distinct, wacky visual identity.",
+            "Implemented pathfinding and animation behaviors using Unity's NavMesh and animation systems under tight game jam constraints."
+        ],
+        "toolsUsed": "Unity, C#",
+        "projectType": "Game Development",
+        "myRole": "Unity Programmer"
+    },
+    {
+        "id": 2,
         "mediaType": "image",
         "mediaPath": "/portfolio9.jpg",
         "title": "Distrosub",
@@ -14,7 +28,7 @@
         "myRole": "Software Engineer"
     },
     {
-        "id": 2,
+        "id": 3,
         "mediaType": "image",
         "mediaPath": "/portfolio8.jpg",
         "title": "Internship: TechFlouu",
@@ -28,7 +42,21 @@
         "myRole": "Full Stack Developer Intern"
     },
     {
-        "id": 3,
+        "id": 4,
+        "mediaType": "video",
+        "mediaPath": "/omz.mp4",
+        "title": "Game Development: Old Man Zeus",
+        "description": "Developed a fast-paced VR action game in just 9 days for VR Jam 2. As the once-mighty Zeus, now retired, the player defends their home from hordes of minotaurs using legendary lightning powers — charging bolts via electrical outlets and summoning Olympian allies.",
+        "highlights": [
+            "Designed and implemented core VR gameplay loop including charge-up lightning mechanics, interactive electrical outlet interactions, and celestial alarm summoning system.",
+            "Delivered a polished, fully playable VR experience as Lead Gameplay Programmer within a 9-day jam deadline using Unity XR Interaction Toolkit."
+        ],
+        "toolsUsed": "Unity, C#, Unity XRI Toolkit",
+        "projectType": "Game Development",
+        "myRole": "Lead Gameplay Programmer"
+    },
+    {
+        "id": 5,
         "mediaType": "image",
         "mediaPath": "/portfolio7.jpg",
         "title": "Internship: Gradient Academy",
@@ -41,7 +69,7 @@
         "myRole": "Software Engineer Intern"
     },
     {
-        "id": 4,
+        "id": 6,
         "mediaType": "image",
         "mediaPath": "/portfolio5.jpg",
         "title": "Internship: MoneyFitt SG",
@@ -54,7 +82,21 @@
         "myRole": "Mobile Developer Intern"
     },
     {
-        "id": 5,
+        "id": 7,
+        "mediaType": "video",
+        "mediaPath": "/tps-ue.mp4",
+        "title": "Game Development: UE5 Third Person Shooter Prototype",
+        "description": "Designed and programmed a third-person shooter prototype in Unreal Engine 5 using Blueprint visual scripting, exploring animation systems, UI design, and AI enemy development as a learning-focused solo project.",
+        "highlights": [
+            "Implemented third-person shooter mechanics, animation state machines, and HUD UI entirely within Unreal Engine's Blueprint system.",
+            "Built AI enemy behavior trees to populate the prototype world and deepen understanding of UE5's AI and animation pipelines."
+        ],
+        "toolsUsed": "Unreal Engine 5, Blueprint",
+        "projectType": "Game Development",
+        "myRole": "Unreal Programmer"
+    },
+    {
+        "id": 8,
         "mediaType": "image",
         "mediaPath": "/portfolio6.jpg",
         "title": "Hackathon: UQUIZZLE",
@@ -67,7 +109,7 @@
         "myRole": "Frontend Engineer & UI Designer"
     },
     {
-        "id": 6,
+        "id": 9,
         "mediaType": "image",
         "mediaPath": "/portfolio1.jpg",
         "title": "Hackathon: PEOPL.",
@@ -80,7 +122,21 @@
         "myRole": "Frontend Developer"
     },
     {
-        "id": 7,
+        "id": 10,
+        "mediaType": "video",
+        "mediaPath": "/tickets-please.mp4",
+        "title": "Game Development: Tickets Please",
+        "description": "Led gameplay programming for a team-built game, responsible for implementing all player interactions and enemy AI systems using Unity and C#.",
+        "highlights": [
+            "Engineered adaptive enemy AI that dynamically adjusts behavior based on player interactions, creating emergent and responsive gameplay scenarios.",
+            "Owned the full gameplay programming scope as Lead Gameplay Programmer, delivering core mechanics and AI systems within team deadlines."
+        ],
+        "toolsUsed": "Unity, C#",
+        "projectType": "Game Development",
+        "myRole": "Lead Gameplay Programmer"
+    },
+    {
+        "id": 11,
         "mediaType": "video",
         "mediaPath": "/vr-space.mp4",
         "title": "Game Development: VR Space Shooter",
@@ -93,20 +149,7 @@
         "myRole": "VR Developer"
     },
     {
-        "id": 8,
-        "mediaType": "video",
-        "mediaPath": "/opengl-mc.mp4",
-        "title": "Computer Graphics: Minecraft World Generation",
-        "description": "Built procedural terrain generation system using C++ and OpenGL, implementing Perlin noise algorithms, real-time lighting with shadow mapping, and optimized rendering pipeline.",
-        "highlights": [
-            "Developed PCF shadow mapping, dynamic day/night cycle, and view frustum culling for performance optimization."
-        ],
-        "toolsUsed": "C++, OpenGL, GLSL, GLFW, GLM, Graphics Programming",
-        "projectType": "Computer Graphics",
-        "myRole": "Graphics Programmer"
-    },
-    {
-        "id": 9,
+        "id": 12,
         "mediaType": "image",
         "mediaPath": "/portfolio2.jpg",
         "title": "Web Development: OKK UI 2022",
@@ -119,7 +162,20 @@
         "myRole": "Web Developer"
     },
     {
-        "id": 10,
+        "id": 13,
+        "mediaType": "video",
+        "mediaPath": "/opengl-mc.mp4",
+        "title": "Computer Graphics: Minecraft World Generation",
+        "description": "Built procedural terrain generation system using C++ and OpenGL, implementing Perlin noise algorithms, real-time lighting with shadow mapping, and optimized rendering pipeline.",
+        "highlights": [
+            "Developed PCF shadow mapping, dynamic day/night cycle, and view frustum culling for performance optimization."
+        ],
+        "toolsUsed": "C++, OpenGL, GLSL, GLFW, GLM, Graphics Programming",
+        "projectType": "Computer Graphics",
+        "myRole": "Graphics Programmer"
+    },
+    {
+        "id": 14,
         "mediaType": "image",
         "mediaPath": "/portfolio3.jpg",
         "title": "Web Development: ACB-ISBE REVAMPED",
@@ -132,7 +188,7 @@
         "myRole": "Full Stack Developer"
     },
     {
-        "id": 11,
+        "id": 15,
         "mediaType": "image",
         "mediaPath": "/portfolio4.jpg",
         "title": "UI/UX Design: STUDENTXCEO INTERNATIONAL SUMMIT 2022",
